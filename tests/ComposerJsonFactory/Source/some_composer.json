@@ -1,0 +1,15 @@
+{
+    "autoload": {
+        "classmap": ["src"],
+        "psr-4": {
+            "App\\": "directory"
+        }
+    },
+    "autoload-dev": {
+        "classmap": ["tests"]
+    },
+    "require": {
+        "php": "^7.4",
+        "symfony/console": "^5.2"
+    }
+}
