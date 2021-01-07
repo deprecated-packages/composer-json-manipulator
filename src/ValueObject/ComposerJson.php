@@ -28,6 +28,16 @@ final class ComposerJson
     private $description;
 
     /**
+     * @var array
+     */
+    private $keywords = [];
+
+    /**
+     * @var string
+     */
+    private $homepage;
+
+    /**
      * @var string|array|null
      */
     private $license;
@@ -403,6 +413,14 @@ final class ComposerJson
             $array[ComposerJsonSection::DESCRIPTION] = $this->description;
         }
 
+        if ($this->keywords !== []) {
+            $array[ComposerJsonSection::KEYWORDS] = $this->keywords;
+        }
+
+        if ($this->homepage !== []) {
+            $array[ComposerJsonSection::HOMEPAGE] = $this->homepage;
+        }
+
         if ($this->license !== null) {
             $array[ComposerJsonSection::LICENSE] = $this->license;
         }
@@ -509,17 +527,49 @@ final class ComposerJson
         $this->description = $description;
     }
 
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param array $keywords
+     */
+    public function setKeywords(array $keywords): void
+    {
+        $this->keywords = $keywords;
+    }
+
+    /**
+     * @return array
+     */
+    public function getKeywords(): array
+    {
+        return $this->keywords;
+    }
+
+    /**
+     * @param string $homepage
+     */
+    public function setHomepage(string $homepage): void
+    {
+        $this->homepage = $homepage;
+    }
+
+    /**
+     * @return string
+     */
+    public function getHomepage(): string
+    {
+        return $this->homepage;
+    }
+
     /**
      * @param string|array $license
      */
     public function setLicense($license): void
     {
         $this->license = $license;
-    }
-
-    public function getDescription(): ?string
-    {
-        return $this->description;
     }
 
     /**
