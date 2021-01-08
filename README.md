@@ -10,6 +10,7 @@
 ## Install
 
 ```bash
+
 composer require symplify/composer-json-manipulator
 ```
 
